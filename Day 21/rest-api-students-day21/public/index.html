@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student REST API</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="badge">DAY 21 • REST API BASICS</p>
+      <h1>Student Management</h1>
+      <p class="subtitle">Express REST API + JavaScript fetch()</p>
+    </header>
+
+    <section class="card">
+      <h2 id="formTitle">Add Student</h2>
+      <form id="studentForm">
+        <input type="hidden" id="studentId" />
+
+        <div class="form-grid">
+          <label>
+            Name
+            <input id="name" type="text" placeholder="Enter name" required />
+          </label>
+
+          <label>
+            Age
+            <input id="age" type="number" min="1" placeholder="Enter age" required />
+          </label>
+
+          <label>
+            Course
+            <input id="course" type="text" placeholder="e.g. B.Tech CSE" required />
+          </label>
+
+          <label>
+            Email
+            <input id="email" type="email" placeholder="student@example.com" required />
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="submitBtn">Add Student</button>
+          <button type="button" id="cancelBtn" class="secondary hidden">Cancel Edit</button>
+        </div>
+      </form>
+      <p id="message" class="message"></p>
+    </section>
+
+    <section class="card">
+      <div class="section-heading">
+        <div>
+          <h2>Students</h2>
+          <p id="studentCount">Loading...</p>
+        </div>
+        <button id="refreshBtn" class="secondary">Refresh</button>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Course</th>
+              <th>Email</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="studentTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card endpoints">
+      <h2>API Endpoints</h2>
+      <ul>
+        <li><span class="get">GET</span> <code>/students</code></li>
+        <li><span class="get">GET</span> <code>/students/:id</code></li>
+        <li><span class="post">POST</span> <code>/students</code></li>
+        <li><span class="put">PUT</span> <code>/students/:id</code></li>
+        <li><span class="delete">DELETE</span> <code>/students/:id</code></li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
